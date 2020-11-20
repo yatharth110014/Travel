@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Cabin|Montserrat|Nunito|Poppins|Roboto&display=swap"
+        rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+
+
+         <link rel="stylesheet" type="text/css" href="Style.css">
+
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+     </head>
+<body> 
+
+	<nav class="navbar navbar-success  bg-success" style="font-family: 'Pacifico', cursive;  ">
+<div class="brand-logo mr-auto text-white">
+	<h3>Travel</h3>
+</div>
+
+<div class=" nav-bar ml-auto text-white" style="word-spacing: 30px; color: #fff;">
+			<a href="#home" style="color: #fff;">Home</a>
+		
+			<a href="#About" style="color: #fff; ">AboutUs</a>
+		
+			<a href="#skill" style="color: #fff; ">Locations</a>
+
+</div>
+</nav>
+
+
+
+
+<section class="slider">
+<ul class="slides" style="font-family: 'Pacifico', cursive;">
+	<li>
+		<img src="https://image.ibb.co/hbEMux/resort1.jpg" alt="resort">
+		<div class="caption center-align text-capitalize">
+			<h1>travel your dream vication</h2>
+			<h4>resort is beautiful this is your dream vication</h4>
+			<button class="btn btn-primary btn btn-large">Learn More  <i class="fa fa-plane"></i></button>
+		</div>
+	</li>
+	<li>
+		<img src="https://image.ibb.co/mn1egc/resort2.jpg" alt="resort">
+		<div class="caption left-align text-capitalize">
+			<h1>travel your dream vication</h1>
+			<h4>resort is beautiful this is your dream vication</h4>
+			<button class="btn btn-primary btn btn-large">Learn More <i class="fa fa-plane"></i></button>
+		</div>
+	</li>
+	<li>
+		<img src="https://image.ibb.co/mbCVnH/resort3.jpg" alt="resort">
+		<div class="caption right-align text-capitalize">
+			<h1>travel your dream vication</h1>
+			<h4>resort is beautiful this is your dream vication</h4>
+			<button class="btn btn-primary btn btn-large">Learn More <i class="fa fa-plane"></i></button>
+		</div>
+	</li>
+</ul><br>
+
+<section class="scroll" id="About" style="font-family: 'Pacifico', cursive;">
+	<center><h1>About us</h1><hr style="width: 250px;"></center>
+	<div class="contanier">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="img.jpg" width="80%" height="100%;">
+			</div>
+			<div class="col-md-6">
+				<h2>Introduction</h2>
+				<h4>travel website is a traveling website</h4>
+				<h4>for our customer</h4><br><br>
+				<a href="#skill"><button class="btn btn-success">Location</button></a>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+	
+
+const slidershow = document.querySelector('.slider');
+M.Slider.init(slidershow, {
+	indicators: false,
+	height:500,
+	transition: 400,
+	interval: 5000,
+})
+
+
+          
+</script><br>
+
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+
+      .main_div {
+        width: 95vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+
+      }
+
+      .center_div {
+        width: 100%;
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+      }
+
+      img {
+        padding: 20px;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+      }
+
+      .center_div::-webkit-scrollbar {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+
+  	<center><h2 style="font-family: 'Pacifico';">Locations</h2><hr style="width: 350px;"></center>
+    <div class="main_div">
+    	  	<section class="scroll" id="skill">
+      <div class="center_div" id="centerdiv"></div>
+    </div>
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      const ss = document.querySelectorAll('.scroll');
+     M.ScrollSpy.init(ss, {});
+      const centerdiv = document.getElementById("centerdiv");
+
+      fetch("https://jsonplaceholder.typicode.com/photos?_limit=20")
+        .then((apidata) => {
+          return apidata.json();
+        })
+        .then((jsondata) => {
+          jsondata.map((val) => {
+            key = val.id;
+            let img = document.createElement("img");
+            img.src = `https://picsum.photos/200/350?random=${val.id}`;
+            centerdiv.appendChild(img);
+            console.log(val.url);
+          });
+        });
+    </script><br>
+
+
+
+</body>
+</html>
